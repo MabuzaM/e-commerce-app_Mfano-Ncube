@@ -1,0 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+p,
+h2,
+h3,
+ul,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.ProductCard__link {
+  text-decoration: none;
+  color: #1d1f22;
+}
+
+.Nav__cart:hover ~ .CartOverlay {
+  display: none;
+}

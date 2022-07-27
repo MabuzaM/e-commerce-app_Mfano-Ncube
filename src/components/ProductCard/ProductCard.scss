@@ -1,0 +1,77 @@
+@import '../../../src/sassVariables';
+
+.ProductCard {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(100% / 33);
+  transition: transform ease-in-out 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(105%);
+  }
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    margin-bottom: 24px;
+    width: 354px;
+    height: 330px;
+    object-fit: contain;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 52px;
+    bottom: 10px;
+    opacity: 0;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+
+  &__outofstock {
+    position: absolute;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: #8d8f9a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+    &--disabled {
+      opacity: 0.5;
+      visibility: visible;
+      flex-direction: column;
+
+      pointer-events: none;
+      &:hover {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: left;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: left;
+  }
+}

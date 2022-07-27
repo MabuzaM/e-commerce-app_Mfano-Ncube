@@ -1,0 +1,134 @@
+@import '../../../src/sassVariables';
+.ProductInfo {
+  display: flex;
+  justify-content: space-between;
+
+  &__gallery {
+    display: flex;
+    gap: 40px;
+    margin-right: 100px;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__image-wrapper {
+    height: 512px;
+    width: 610px;
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: center;
+    width: 610px;
+  }
+}
+
+.Item {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  &__description {
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    &--value {
+      font-size: 24px;
+      line-height: 18px;
+    }
+  }
+
+  &__attribute {
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+
+    &-wraper {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+  
+    &-color {
+      width: 32px;
+      height: 32px;
+      border: 1px solid $c-darkGray;
+      margin-bottom: 16px;
+
+      &:hover {
+        border-color: $c-accentGreen;
+        cursor: pointer;
+      }
+
+      &--isActive {
+        border-color: $c-accentGreen;
+      }
+    }
+
+    &-other {
+      border: 1px solid $c-darkGray;
+      width: 64px;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $c-darkGray;
+        color: $c-white;
+      }
+
+      &--isActive {
+        background-color: $c-darkGray;
+        color: $c-white;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+  }
+
+  &__text {
+    margin-top: 40px;
+  }
+}

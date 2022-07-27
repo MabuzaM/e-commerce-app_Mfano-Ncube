@@ -1,0 +1,140 @@
+@import '../../../src/sassVariables';
+
+.Cart {
+  &__line {
+    margin: 22px 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $c-red;
+    font-weight: 600;
+  }
+
+  &__summary {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 32px;
+
+    &--value {
+      font-weight: 700;
+    }
+  }
+
+  &__tax,
+  &__quantity,
+  &__total {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__button-link {
+    text-decoration: none;
+  }
+}
+
+.Item {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  &__description {
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  &__extra {
+    position: relative;
+    display: flex;
+    gap: 24px;
+  }
+
+  &__quantity-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 160%;
+  }
+
+  &__increase,
+  &__decrease {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid $c-darkGray;
+    flex-grow: 0;
+    &:hover {
+      background-color: $c-darkGray;
+      color: $c-white;
+      cursor: pointer;
+    }
+  }
+
+  &__image-slider {
+    position: relative;
+    width: 200px;
+    height: 288px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__slider-controls {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    gap: 8px;
+    opacity: 0.75;
+
+    &--previous,
+    &--next {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: $c-black;
+      color: $c-white;
+      width: 24px;
+      height: 24px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

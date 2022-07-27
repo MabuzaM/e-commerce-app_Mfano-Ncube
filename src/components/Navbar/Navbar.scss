@@ -1,0 +1,83 @@
+@import '../../../src/sassVariables';
+
+.Nav {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+
+  &__list {
+    list-style: none;
+    display: inline-flex;
+    column-gap: 32px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-darkGray;
+    border-bottom: transparent 2px solid;
+    transition:
+      border-bottom ease-in-out 0.5s,
+      color ease-in-out 0.5s;
+    padding: 24px 0;
+
+    &:hover {
+      color: $c-mainGreen;
+      border-bottom-color: $c-mainGreen;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: 28px;
+  }
+
+  &__currency-switcher {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    position: relative;
+
+    &-link {
+      text-decoration: none;
+      color: $c-darkGray;
+    }
+
+    &-count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 60px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+      background-color: $c-darkGray;
+      color: $c-white;
+      position: absolute;
+      bottom: 14px;
+      right: -10px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.active {
+  color: $c-mainGreen;
+  font-weight: 600;
+  border-bottom-color: $c-mainGreen;
+}

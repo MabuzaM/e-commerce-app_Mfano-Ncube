@@ -1,0 +1,61 @@
+@import '../src/sassVariables';
+
+.App {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: $c-darkGray;
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 100px;
+  }
+
+  &__background {
+    background-color: #c2c2c2;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    top: 82px;
+    right: 0;
+    opacity: 0.75;
+    width: 100vw;
+    display: none;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__main {
+    position: relative;
+    margin-top: 160px;
+    padding: 0 100px 190px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    display: block;
+    font-size: 42px;
+    margin: 0 0 86px;
+    text-align: left;
+  }
+
+  &__products {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 86px;
+    flex-wrap: wrap;
+  }
+}

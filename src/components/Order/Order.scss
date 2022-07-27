@@ -1,0 +1,10 @@
+.Order {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__table {
+    width: 100%;
+    text-align: left;
+  }
+}
