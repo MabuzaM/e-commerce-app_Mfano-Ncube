@@ -34,6 +34,27 @@
     object-position: center;
     width: 610px;
   }
+
+  &__success-message{
+    width: 100%;
+    background-color: #a6f5b9;
+    border-radius: 6px;
+    padding: 20px;
+    color: #f00;
+    font-weight: 600;
+    display: flex;
+    z-index: 6;
+    transform: translateY(-450%);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform ease-in-out 0.5s;
+
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .Item {

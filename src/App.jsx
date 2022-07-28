@@ -131,10 +131,8 @@ class App extends React.PureComponent {
             />
           </header>
 
-          <div className={cn("App__background", {"App__background--visible": isCartVisible})}></div>
-
           <main className="App__main">
-            {
+            <div className={cn("App__background", {"App__background--visible": isCartVisible})}>
               <CartOverlay
                 productsInCart={cartProducts}
                 currency={selectedCurrency}
@@ -142,8 +140,9 @@ class App extends React.PureComponent {
                 onDeleteItem={removeItemFromCart}
                 isCartVisible={isCartVisible}
                 hideCartOverlay={handleHideCartOverlay}
-              />
-            }
+              />              
+            </div>
+
             <Routes>
               <Route
                 path="all"

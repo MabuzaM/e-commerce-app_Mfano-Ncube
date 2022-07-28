@@ -20,19 +20,23 @@
   }
 
   &__background {
-    background-color: #c2c2c2;
+    background-color: rgba(57, 55, 72, 0.22);;
     position: absolute;
     z-index: 3;
     bottom: 0;
     left: 0;
-    top: 82px;
+    top: -78px;
     right: 0;
-    opacity: 0.75;
     width: 100vw;
-    display: none;
+    height: inherit;
+    display: flex;
+    visibility: hidden;
+    transition: visibility ease-in-out 0.5s,
+      background-color ease-in-out 0.5s;
+
 
     &--visible {
-      display: block;
+      visibility: visible;
     }
   }
 
