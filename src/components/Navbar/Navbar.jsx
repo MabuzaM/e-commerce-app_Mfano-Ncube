@@ -86,7 +86,7 @@ export class Navbar extends React.PureComponent {
           
             <div
               className="Nav__cart"
-              onMouseOver={() => showCartOverlay()}
+              onMouseEnter={() => showCartOverlay()}
               onClick={() => hideCartOverlay()}
               >
               <NavLink to="cart" className="Nav__cart-link">
