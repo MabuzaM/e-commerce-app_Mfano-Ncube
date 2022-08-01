@@ -1,44 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { renderProducts } from '../../helpers/helpers';
 
-class Clothes extends React.PureComponent {
-  state = {
-    clothes: [],
-  }
+const Clothes = React.memo(({
+  currency = '$',
+  cartProducts = null,
+  onProductClick = () => undefined,
+  products = [],
+}) => {
+  const [clothes, setClothes] = useState([]);
 
-  constructor(props) {
-    super(props)
-    props = {
-      currency: '$',
-      cartProducts: null,
-      onProductClick: () => undefined,
-      products: [],
-    }
-  }
+  useEffect(() => {
+    setClothes(products.filter(product => product.category === 'clothes'));
+  }, [products]);
 
-  componentDidMount() {
-    this.setState({clothes: this.props.products.filter(product => product.category === 'clothes')})
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.products !== this.props.products) {
-      this.setState({clothes: this.props.products.filter(product => product.category === 'clothes')})
-    }
-  }
-
-  render () {
-    const {
+  return (
+    renderProducts(
+      clothes,
       currency,
       cartProducts,
-      onProductClick,
-    } = this.props;
-
-    const { clothes } = this.state;
-
-    return (
-      renderProducts(clothes, currency, cartProducts, onProductClick)
-    );
-  }
-}
+      onProductClick
+    )
+  );
+});
 
 export default Clothes;

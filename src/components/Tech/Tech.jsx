@@ -1,46 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { renderProducts } from '../../helpers/helpers';
 
-class Tech extends React.PureComponent {
-  state = {
-    productId: '',
-    tech: [],
-    productPrices: [],
-    selectedProduct: null,
-  }
+const Tech = React.memo(({
+  currency = '$',
+  cartProducts = null,
+  onProductClick = () => undefined,
+  products = [],
+}) => {
+  const [tech, setTech] = useState([]);
 
-  constructor(props) {
-    super(props)
-    props = {
-      currency: '$',
-      cartProducts: null,
-      onProductClick: () => undefined,
-      products: [],
-    }
-  }
+  useEffect(() => {
+    setTech(products.filter(product => product.category === 'tech'));
+  }, [products]);
 
-  componentDidMount() {
-    this.setState({tech: this.props.products.filter(product => product.category === 'tech')})
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.products !== this.props.products) {
-      this.setState({tech: this.props.products.filter(product => product.category === 'tech')})
-    }
-  }
-
-  render () {
-    const {
+  useEffect(() => {
+    setTech(products.filter(product => product.category === 'tech'));
+  }, [products]);
+  return (
+    renderProducts(
+      tech,
       currency,
       cartProducts,
-      onProductClick,
-    } = this.props;
-    const { tech } = this.state;
-
-    return (
-      renderProducts(tech, currency, cartProducts, onProductClick)
-    );
-  }
-}
+      onProductClick
+    )
+  );
+});
 
 export default Tech;
