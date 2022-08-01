@@ -21,4 +21,4 @@
 - [API](https://github.com/scandiweb/junior-react-endpoint/)
 
 ## Demo Link
-- [DEMO LINK](https://MabuzaM.github.io/react_e-commerce-test-task_mfanomutsha_ncube/)
+- [DEMO LINK](https://MabuzaM.github.io/e-commerce-app_Mfano-Ncube/)
