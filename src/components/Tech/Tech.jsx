@@ -16,6 +16,7 @@ const Tech = React.memo(({
   useEffect(() => {
     setTech(products.filter(product => product.category === 'tech'));
   }, [products]);
+
   return (
     renderProducts(
       tech,
